@@ -256,7 +256,7 @@
 					"x-totvs": [
 						{
 							"product": "PROTHEUS",
-							"field": "SC0.C0_QTDPED|SC0.C0_QUANT",
+							"field": "SC0.C0_QTDPED/SC0.C0_QUANT",
 							"required": true,
 							"type": "decimal",
 							"length": "7, 2",
