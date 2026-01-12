@@ -1,0 +1,525 @@
+{
+  "openapi": "3.0.1",
+  "servers": [
+    {
+      "description": "API do Painel de Auditoria RH",
+      "url": "{{host}}/api/rh/v1",
+      "variables": {
+        "serverUrl": {
+          "default": "localhost"
+        },
+        "serverHttpPort": {
+          "default": "8080"
+        }
+      }
+    }
+  ],
+  "info": {
+    "description": "API responsável pelas informações do Painel de Auditoria de RH",
+    "version": "1.000",
+    "title": "Painel de Auditoria",
+    "contact": {
+      "name": "T-Talk",
+      "url": "api.totvs.com.br",
+      "email": "dielly.ribeiro@totvs.com.br"
+    },
+    "x-totvs": {
+      "messageDocumentation": {
+        "name": "AuditPanel",
+        "description": "Painel de Auditoria de RH",
+        "segment": "RH",
+        "domain": "hcm"
+      },
+      "productInformation": [
+        {
+          "product": "Protheus",
+          "available": true,
+          "minimalVersion": "xx.x.xx"
+        },
+        {
+          "product": "RM",
+          "available": true,
+          "minimalVersion": "xx.x.xx"
+        }
+      ]
+    }
+  },
+  "paths": {
+    "/painel-auditoria/period": {
+      "get": {
+        "tags": [
+          "Painel de Auditoria"
+        ],
+        "summary": "Periodos | Listagem",
+        "x-totvs": {
+          "productInformation": [
+            {
+              "product": "Protheus",
+              "available": true,
+              "note": "Retorna os períodos disponíveis para filtro",
+              "minimalVersion": "xx.x.xx"
+            },
+            {
+              "product": "RM",
+              "available": true,
+              "note": "Retorna os períodos disponíveis para filtro",
+              "minimalVersion": "xx.x.xx"
+            }
+          ]
+        },
+        "description": "Retorna os períodos de apuração disponíveis no sistema.",
+        "operationId": "getAuditPeriods",
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/AuditPeriodItems"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição Inválida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InvalidRequest"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno do Servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/painel-auditoria/big-numbers": {
+      "get": {
+        "tags": [
+          "Painel de Auditoria"
+        ],
+        "summary": "Indicadores | Resumo",
+        "x-totvs": {
+          "productInformation": [
+            {
+              "product": "Protheus",
+              "available": true,
+              "note": "Retorna os contadores principais do dashboard",
+              "minimalVersion": "xx.x.xx"
+            },
+            {
+              "product": "RM",
+              "available": true,
+              "note": "Retorna os contadores principais do dashboard",
+              "minimalVersion": "xx.x.xx"
+            }
+          ]
+        },
+        "description": "Retorna os indicadores principais (Big Numbers) para o dashboard.",
+        "operationId": "getBigNumbers",
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/AuditBigNumbersItems"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição Inválida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InvalidRequest"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno do Servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/painel-auditoria/employees": {
+      "get": {
+        "tags": [
+          "Painel de Auditoria"
+        ],
+        "summary": "Funcionários | Listagem",
+        "x-totvs": {
+          "productInformation": [
+            {
+              "product": "Protheus",
+              "available": true,
+              "note": "Listagem de funcionários auditados",
+              "minimalVersion": "xx.x.xx"
+            },
+            {
+              "product": "RM",
+              "available": true,
+              "note": "Listagem de funcionários auditados",
+              "minimalVersion": "xx.x.xx"
+            }
+          ]
+        },
+        "description": "Lista os funcionários vinculados ao processo de auditoria.",
+        "operationId": "getEmployees",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/AuditEmployeeItems"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição Inválida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InvalidRequest"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno do Servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/painel-auditoria/update-feedback": {
+      "post": {
+        "tags": [
+          "Painel de Auditoria"
+        ],
+        "summary": "Feedback | Atualização",
+        "x-totvs": {
+          "productInformation": [
+            {
+              "product": "Protheus",
+              "available": true,
+              "note": "Permite atualizar o status de feedback da auditoria",
+              "minimalVersion": "xx.x.xx"
+            },
+            {
+              "product": "RM",
+              "available": true,
+              "note": "Permite atualizar o status de feedback da auditoria",
+              "minimalVersion": "xx.x.xx"
+            }
+          ]
+        },
+        "description": "Envia uma atualização de feedback para um registro de auditoria.",
+        "operationId": "UpdateFeedback",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição Inválida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InvalidRequest"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno do Servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/painel-auditoria/conformities": {
+      "get": {
+        "tags": [
+          "Painel de Auditoria"
+        ],
+        "summary": "Conformidades | Listagem",
+        "x-totvs": {
+          "productInformation": [
+            {
+              "product": "Protheus",
+              "available": true,
+              "note": "Lista itens em conformidade ou não",
+              "minimalVersion": "xx.x.xx"
+            },
+            {
+              "product": "RM",
+              "available": true,
+              "note": "Lista itens em conformidade ou não",
+              "minimalVersion": "xx.x.xx"
+            }
+          ]
+        },
+        "description": "Lista os itens de verificação da auditoria, indicando quais regras de conformidade foram atendidas e quais apresentam inconsistências.",
+        "operationId": "getConformities",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/AuditConformityItems"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição Inválida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InvalidRequest"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno do Servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/painel-auditoria/branches": {
+      "get": {
+        "tags": [
+          "Painel de Auditoria"
+        ],
+        "summary": "Filiais | Listagem",
+        "x-totvs": {
+          "productInformation": [
+            {
+              "product": "Protheus",
+              "available": true,
+              "note": "Respeita o dicionário de dados e permissões de grupo (X000)",
+              "minimalVersion": "xx.x.xx"
+            },
+            {
+              "product": "RM",
+              "available": true,
+              "note": "Respeita o dicionário de dados e permissões de grupo (X000)",
+              "minimalVersion": "xx.x.xx"
+            }
+          ]
+        },
+        "description": "Retorna as filiais que o usuário logado tem permissão para visualizar, utilizado para o filtro de unidade de negócio do painel.",
+        "operationId": "getBranches",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/AuditBranchItems"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição Inválida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InvalidRequest"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno do Servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/painel-auditoria/last-update": {
+      "get": {
+        "tags": [
+          "Painel de Auditoria"
+        ],
+        "summary": "Última Atualização | Consulta",
+        "x-totvs": {
+          "productInformation": [
+            {
+              "product": "Protheus",
+              "available": true,
+              "note": "Verifica o timestamp da última execução do job de auditoria",
+              "minimalVersion": "xx.x.xx"
+            },
+            {
+              "product": "RM",
+              "available": true,
+              "note": "Verifica o timestamp da última execução do job de auditoria",
+              "minimalVersion": "xx.x.xx"
+            }
+          ]
+        },
+        "description": "Informa a data e hora em que os dados da auditoria foram processados pela última vez no backend, para controle de obsolescência.",
+        "operationId": "getLastUpdate",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/AuditLastUpdate"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição Inválida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InvalidRequest"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno do Servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/painel-auditoria/history": {
+      "get": {
+        "tags": [
+          "Painel de Auditoria"
+        ],
+        "summary": "Histórico | Listagem",
+        "x-totvs": {
+          "productInformation": [
+            {
+              "product": "Protheus",
+              "available": true,
+              "note": "Consulta tabelas históricas de resultados de auditoria",
+              "minimalVersion": "xx.x.xx"
+            },
+            {
+              "product": "RM",
+              "available": true,
+              "note": "Consulta tabelas históricas de resultados de auditoria",
+              "minimalVersion": "xx.x.xx"
+            }
+          ]
+        },
+        "description": "Retorna o histórico de execuções de auditorias passadas, permitindo a comparação de evolução de conformidade entre diferentes períodos.",
+        "operationId": "getHistory",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/AuditHistoryItems"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição Inválida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InvalidRequest"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno do Servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/AuditPanel_1_000.json#/definitions/InternalServerError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
