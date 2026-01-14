@@ -34,7 +34,7 @@
         {
           "product": "Protheus",
           "available": true,
-          "minimalVersion": "xx.x.xx"
+          "minimalVersion": "12.1.2310"
         },
         {
           "product": "RM",
@@ -57,7 +57,7 @@
               "product": "Protheus",
               "available": true,
               "note": "Retorna os períodos disponíveis para filtro",
-              "minimalVersion": "xx.x.xx"
+              "minimalVersion": "12.1.2310"
             },
             {
               "product": "RM",
@@ -115,7 +115,7 @@
               "product": "Protheus",
               "available": true,
               "note": "Retorna os contadores principais do dashboard",
-              "minimalVersion": "xx.x.xx"
+              "minimalVersion": "12.1.2310"
             },
             {
               "product": "RM",
@@ -173,7 +173,7 @@
               "product": "Protheus",
               "available": true,
               "note": "Listagem de funcionários auditados",
-              "minimalVersion": "xx.x.xx"
+              "minimalVersion": "12.1.2310"
             },
             {
               "product": "RM",
@@ -297,7 +297,7 @@
               "product": "Protheus",
               "available": true,
               "note": "Lista itens em conformidade ou não",
-              "minimalVersion": "xx.x.xx"
+              "minimalVersion": "12.1.2310"
             },
             {
               "product": "RM",
@@ -356,7 +356,7 @@
               "product": "Protheus",
               "available": true,
               "note": "Respeita o dicionário de dados e permissões de grupo (X000)",
-              "minimalVersion": "xx.x.xx"
+              "minimalVersion": "12.1.2310"
             },
             {
               "product": "RM",
@@ -415,7 +415,7 @@
               "product": "Protheus",
               "available": true,
               "note": "Verifica o timestamp da última execução do job de auditoria",
-              "minimalVersion": "xx.x.xx"
+              "minimalVersion": "12.1.2310"
             },
             {
               "product": "RM",
@@ -474,7 +474,7 @@
               "product": "Protheus",
               "available": true,
               "note": "Consulta tabelas históricas de resultados de auditoria",
-              "minimalVersion": "xx.x.xx"
+              "minimalVersion": "12.1.2310"
             },
             {
               "product": "RM",
