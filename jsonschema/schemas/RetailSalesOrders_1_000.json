@@ -1,0 +1,90 @@
+{
+	"$schema": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/RetailSalesOrders_2_010.json#",
+	"info": {
+		"description": "Schema para integração de pedidos de venda do varejo (RetailSalesOrders)",
+		"version": "2.010",
+		"title": "RetailSalesOrders",
+		"contact": {},
+		"x-totvs": {
+			"messageDocumentation": {
+				"name": "RetailSalesOrders",
+				"description": "Mensagem para Integração dos Pedidos de Venda do Varejo",
+				"segment": "Varejo"
+			},
+			"productInformation": [
+				{
+					"product": "PROTHEUS",
+					"contact": "",
+					"note": "",
+					"adapter": ""
+				}
+			]
+		}
+	},
+	"definitions": {
+		"RetailSalesOrderType": {
+			"type": "object",
+			"properties": {
+				"collectCode": { "type": "string", "description": "Código da coleta" },
+				"orderNumber": { "type": "string", "description": "Número do pedido" },
+				"typeSales": { "type": "string", "description": "Tipo de venda" },
+				"glassNumber": { "type": "string", "description": "Número do vidro" },
+				"salesOrderStock": { "type": "string", "description": "Estoque do pedido de venda" },
+				"connectStockCode": { "type": "string", "description": "Código de conexão do estoque" },
+				"currency": { "type": "string", "description": "Moeda" },
+				"invoiceNumber": { "type": "string", "description": "Número da nota fiscal" },
+				"companyId": { "type": "string", "description": "ID da empresa" },
+				"companyInternalId": { "type": "string", "description": "ID interno da empresa" },
+				"branchId": { "type": "string", "description": "ID da filial" },
+				"grossValue": { "type": "number", "description": "Valor bruto" },
+				"expenseValue": { "type": "number", "description": "Valor de despesas" },
+				"netValue": { "type": "number", "description": "Valor líquido" },
+				"discountValue": { "type": "number", "description": "Valor de desconto" },
+				"increaseValue": { "type": "number", "description": "Valor de acréscimo" },
+				"invoiceStatus": { "type": "string", "description": "Status da nota fiscal" },
+				"invoiceDate": { "type": "string", "format": "date-time", "description": "Data da nota fiscal" },
+				"customerCode": { "type": "string", "description": "Código do cliente" },
+				"customerInternalId": { "type": "string", "description": "ID interno do cliente" },
+				"operatorCode": { "type": "string", "description": "Código do operador" },
+				"operatorInternalId": { "type": "string", "description": "ID interno do operador" },
+				"seriesCode": { "type": "string", "description": "Código da série" },
+				"movementNumber": { "type": "string", "description": "Número do movimento" },
+				"paymentTerm": { "type": "string", "description": "Condição de pagamento" },
+				"hasNext": { "type": "boolean", "description": "Indica se há próxima página" }
+			}
+		},
+		"RetailSalesOrderItemType": {
+			"type": "object",
+			"properties": {
+				"typeProductOrderRef": { "type": "string", "description": "Tipo de referência do produto" },
+				"partType": { "type": "string", "description": "Tipo de peça" },
+				"companyId": { "type": "string", "description": "ID da empresa" },
+				"companyInternalId": { "type": "string", "description": "ID interno da empresa" },
+				"productCode": { "type": "string", "description": "Código do produto" },
+				"totalValue": { "type": "number", "description": "Valor total" },
+				"orderId": { "type": "string", "description": "ID do pedido" },
+				"branchId": { "type": "string", "description": "ID da filial" },
+				"glassNumber": { "type": "string", "description": "Número do vidro" },
+				"extendedWarranty": { "type": "string", "description": "Garantia estendida" },
+				"author": { "type": "string", "description": "Autor" },
+				"description": { "type": "string", "description": "Descrição" },
+				"customerCode": { "type": "string", "description": "Código do cliente" },
+				"customerInternalId": { "type": "string", "description": "ID interno do cliente" },
+				"stockCode": { "type": "string", "description": "Código do estoque" },
+				"lot": { "type": "string", "description": "Lote" },
+				"orderedAmount": { "type": "number", "description": "Quantidade solicitada" },
+				"stockBlocked": { "type": "string", "description": "Estoque bloqueado" },
+				"blockInformation": { "type": "string", "description": "Informação de bloqueio" },
+				"internalId": { "type": "string", "description": "ID interno do item" },
+				"taxationStatus": { "type": "string", "description": "Status tributário" },
+				"orderCode": { "type": "string", "description": "Código do pedido" },
+				"seriesCode": { "type": "string", "description": "Código da série" },
+				"totalized": { "type": "string", "description": "Totalizado" },
+				"emissionDate": { "type": "string", "description": "Data de emissão" },
+				"creditBlock": { "type": "string", "description": "Bloqueio de crédito" },
+				"blocks": { "type": "string", "description": "Bloqueios" },
+				"hasNext": { "type": "boolean", "description": "Indica se há próxima página" }
+			}
+		}
+	}
+}
