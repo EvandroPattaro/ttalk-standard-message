@@ -57,7 +57,7 @@
 									"properties": {
 										"items": {
 											"type": "array",
-											"items": { "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/RetailSales_1_000.json#/definitions/RetailSalesOrderType" }
+											"items": { "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/RetailSalesOrders_1_000.json#/definitions/RetailSalesOrdersType" }
 										},
 										"hasNext": { "type": "boolean" }
 									}
@@ -106,7 +106,7 @@
 									"properties": {
 										"items": {
 											"type": "array",
-											"items": { "$ref": "../schemas/RetailSalesOrders_2_010.json#/definitions/RetailSalesOrderItemType" }
+											"items": { "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/RetailSalesOrders_1_000.json#/definitions/RetailSalesOrderItemType" }											
 										},
 										"hasNext": { "type": "boolean" }
 									}
