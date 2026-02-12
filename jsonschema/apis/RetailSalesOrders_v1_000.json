@@ -3,7 +3,7 @@
 	"servers": [
 		{
 			"description": "API para pedidos de venda do varejo",
-			"url": "{{host}}/api/retail/v2",
+			"url": "{{host}}/api/retail/v1",
 			"variables": {
 				"serverUrl": { "default": "localhost" },
 				"serverHttpPort": { "default": "8080" }
